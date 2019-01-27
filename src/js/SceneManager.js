@@ -2,17 +2,17 @@ import { Scene } from 'three'
 
 export const SceneManager = {
 
-    scene: null,
+    scenes: null,
 
-    createNewScene () {
+    createNew () {
 
-        this.scene = new Scene();
+        this.scenes = new Scene();
 
     },
 
     addToScene ( ...params ) {
 
-        if ( !this.scene ) {
+        if ( !this.scenes ) {
 
             console.log( "err: scene not created!" );
             return
@@ -27,13 +27,13 @@ export const SceneManager = {
 
                 for ( let k of params[i] ) {
 
-                    this.scene.add( k );
+                    this.scenes.add( k );
 
                 }
 
             } else {
 
-                this.scene.add( params[i] );
+                this.scenes.add( params[i] );
 
             }
 

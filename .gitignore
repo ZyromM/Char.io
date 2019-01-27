@@ -242,3 +242,6 @@ typings/
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/node,linux,webstorm,jetbrains+all,visualstudiocode
+
+#Personal
+build.sh
