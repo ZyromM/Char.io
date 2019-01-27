@@ -2,12 +2,11 @@ import { TextureLoader } from 'three'
 
 export const TextureManager = {
 
-    // Properties
-    Textures: {},
+    textures: {},
 
     createNew( name, path ) {
 
-        this.Textures[name]  = new TextureLoader().load( path )
+        this.textures[name]  = new TextureLoader().load( path )
 
     },
 

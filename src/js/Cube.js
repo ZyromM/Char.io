@@ -1,4 +1,4 @@
-import { BoxBufferGeometry, Mesh, MeshLambertMaterial } from "three";
+import {BoxBufferGeometry, Mesh, MeshLambertMaterial, MeshPhysicalMaterial} from "three";
 
 export const Cube = {
 
@@ -7,21 +7,17 @@ export const Cube = {
     depth: 1,
 
     geometry: new BoxBufferGeometry( 1, 1, 1 ),
-    material: null,
     mesh: null,
 
-    create ( x, y, z, ...params ) {
+    create ( x, y, z, material, ...params ) {
 
         if ( params.width ) this.width = params.width;
         if ( params.height ) this.height = params.height;
         if ( params.depth ) this.depth = params.depth;
         if ( params.color ) this.material.color.set( params.color );
 
-        this.material = params.texture ? new MeshLambertMaterial( { map: params.texture} ) : new MeshLambertMaterial();
+        this.mesh = new Mesh( this.geometry, material );
 
-        this.mesh = new Mesh( this.geometry, this.material );
-
-        //console.log("x: ", x, "y: ", y, "z: ", z);
         this.mesh.position.set( x, y, z );
 
         return this.mesh

@@ -245,3 +245,4 @@ typings/
 
 #Personal
 build.sh
+src/js/test.js

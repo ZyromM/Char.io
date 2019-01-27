@@ -2,12 +2,11 @@ import { MeshPhysicalMaterial } from 'three'
 
 export const MaterialManager = {
 
-    // Properties
-    Materials: {},
+    materials: {},
 
     createNew( name, params ) {
 
-        this.Materials[name] = params ? new MeshPhysicalMaterial( params ) : new MeshPhysicalMaterial();
+        this.materials[name] = params ? new MeshPhysicalMaterial( params ) : new MeshPhysicalMaterial();
 
     },
 

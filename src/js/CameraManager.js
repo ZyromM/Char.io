@@ -19,15 +19,8 @@ export const CameraManager = {
 
         this.cameras = new PerspectiveCamera( this.fov, this.aspect, this.near, this.far );
 
-        //DEBUG
-        // this.cameras.position.x = 4;
-        // this.cameras.position.y = 4;
-        // this.cameras.position.z = 10;
         this.cameras.position.set(4, 4, 10);
         this.cameras.rotation.x = 100;
-        //
-
-        console.log("camera: ", this.cameras)
 
     },
 

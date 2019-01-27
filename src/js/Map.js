@@ -1,16 +1,12 @@
 import { Group } from 'three'
 import { Cube } from './Cube.js'
-import * as THREE from "three";
 
-export const MapBuffer = {
+export const Map = {
 
-    map: new Group(),
+    createNew ( pos, materialFloor, materialWall ) {
 
-    create ( pos, color ) {
-
-        let texture = new THREE.TextureLoader().load( '../res/Textures/floor2.jpeg' );
-        console.log("texture :", texture)
-        this.map.name = "map";
+        let map = new Group();
+        map.name = "map";
 
         for ( let z = 0; pos[z]; ++z ) {
 
@@ -18,13 +14,16 @@ export const MapBuffer = {
 
                 for ( let y = 0; y <= pos[z][x]; ++y ) {
 
-                    y === 0 ? this.map.add(Cube.create(x, y, -z, { color: color })) : this.map.add(Cube.create(x, y, -z, { color: color, texture: texture }));
+//                    y === 0 ? this.map.add(Cube.create(x, y, -z, { color: color })) : this.map.add(Cube.create(x, y, -z, { color: color, texture: texture }));
+                    y === 0 ? map.add(Cube.create(x, y, -z, materialFloor)) : map.add(Cube.create(x, y, -z, materialWall));
 
                 }
 
             }
 
         }
+
+        return map
 
     },
 
