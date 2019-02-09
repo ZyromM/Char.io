@@ -7,7 +7,7 @@ import {CameraManager} from "./CameraManager";
 import { TextureManager } from "./TextureManager.js";
 import { MaterialManager } from "./MaterialManager.js";
 import { RenderManager } from "./RenderManager.js";
-import {LightManager} from "./LightManager";
+import { LightManager } from "./LightManager";
 
 let OrbitControls = require('three-orbit-controls')(THREE);
 let THREE2 = window.THREE = require('three');
@@ -49,20 +49,44 @@ function init() {
 
 init();
 
-// TESTING
+// LOAD CHARACTER
+
 let loader = new THREE2.GLTFLoader();
+var obj = null;
 
-loader.load( '../res/Models/Soldier/scene.gltf', gltf => {
+loader.load( '../res/Models/Soldier/scene.gltf', function ( object ) {
 
-    //gltf.position.set(0, 4, 0);
-    GameManager.update('scenes', 'addObjectToScene', gltf );
+    obj = object.scene;
+    console.log("objects", object)
+    GameManager.update('scenes', 'addObjectToScene', object.scene.children );
 
-}, undefined, error => {
+    //console.log("obj inside: ", object.scene.children )
+    //console.log("obj: ", obj)
 
-    console.error( error );
+} );
 
-});
-// END TESTING
+console.log("obj: ", obj);
+
+//ANIMATION
+
+let mixer = new THREE.AnimationMixer( obj );
+let clips = obj.animations;
+
+function update () {
+    mixer.update( 1000 );
+}
+
+console.log("clip :", clips)
+
+let clip = THREE.AnimationClip.findByName( clips, 'dance' );
+let action = mixer.clipAction( clip );
+
+action.play();
+
+// Play all animations
+clips.forEach( function ( clip ) {
+    mixer.clipAction( clip ).play();
+} );
 
 GameManager.update('scenes', 'addToScene', Map.createNew( exampleMap.map, GameManager.materials['MxFloor1'], GameManager.materials['MxWall1'] ), GameManager.gridHelper );
 GameManager.update('scenes', 'addObjectToScene', GameManager.lights);
@@ -71,12 +95,10 @@ GameManager.renderer.render( GameManager.scenes, GameManager.cameras );
 let controls = new OrbitControls( GameManager.cameras);
 controls.addEventListener( 'change', GameManager.renderer );
 
-
 let animate = function () {
 
     requestAnimationFrame( animate );
     GameManager.renderer.render( GameManager.scenes, GameManager.cameras );
-
 };
 
 animate();

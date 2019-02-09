@@ -23,7 +23,7 @@ export const SceneManager = {
 
             if ( Array.isArray(params[i] ) ) {
 
-                console.log("tab");
+                //console.log("tab");
 
                 for (let k of params[i]) {
 
@@ -34,7 +34,7 @@ export const SceneManager = {
 
             } else {
 
-                console.log("oui")
+                //console.log("oui")
                 this.scenes.add( params[i] );
 
             }
@@ -52,7 +52,7 @@ export const SceneManager = {
 
         }
 
-        console.log("obj");
+        //console.log("obj");
 
         for (let i in params) {
 
