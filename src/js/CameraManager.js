@@ -1,37 +1,25 @@
 import { ArcRotateCamera, Vector3 } from "babylonjs";
 
 export const CameraManager = {
-  cameras: null,
+  cameras: {},
 
-  createNew(name, alpha, beta, radius, target, scene, canvas) {
+  createNew(name, alpha, beta, radius, target, scene, canvas, type) {
     //add active as parameter
-    this.cameras = new ArcRotateCamera(
-      name,
-      alpha,
-      beta,
-      radius,
-      target,
-      scene
-    );
 
-    this.camera.setTarget(Vector3.Zero());
-
-    // attach the camera to the canvas
-    this.camera.attachControl(canvas, false);
-
-    //this.cameras.position.set(4, 4, 10);
-    //this.cameras.rotation.x = 100;
+    switch (type) {
+      case "ArcRotate":
+        console.log("oui");
+        this.cameras[name] = new ArcRotateCamera(
+          name,
+          alpha,
+          beta,
+          radius,
+          target,
+          scene
+        );
+        this.cameras[name].setTarget(Vector3.Zero());
+        this.cameras[name].attachControl(canvas, false);
+        break;
+    }
   }
-
-  // setPosition ( x, y, z ) {
-  //
-  //     this.cameras.position.set( x, y, z )
-  //
-  // },
-  //
-  // setRotation ( x, y, z ) {
-  //
-  //     this.cameras.rotation.set( x, y, z )
-  //
-  // },
 };

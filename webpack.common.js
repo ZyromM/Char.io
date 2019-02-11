@@ -1,5 +1,4 @@
  const path = require('path');
- const CleanWebpackPlugin = require('clean-webpack-plugin');
  const HtmlWebpackPlugin = require('html-webpack-plugin');
 
    module.exports = {
@@ -11,10 +10,9 @@
        filename: "main.js",
      },
    plugins: [
-       new CleanWebpackPlugin(['dist']),
-       new HtmlWebpackPlugin({
-           title: 'Production'
-     })
+     new HtmlWebpackPlugin({
+       template: path.resolve("src", "index.html")
+     }),
    ],
      performance: {
        hints: false,

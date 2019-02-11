@@ -2,7 +2,6 @@
     "presets": [
         [
             "@babel/preset-env",
-            "flow",
             {
                 "targets": {
                     "node": "6.10",

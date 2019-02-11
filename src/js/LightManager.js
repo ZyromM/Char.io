@@ -1,12 +1,10 @@
-import { AmbientLight } from "three";
+import { HemisphericLight } from "babylonjs";
 
 export const LightManager = {
   lights: {},
 
-  createNew(name, ...params) {
-    let light = new AmbientLight(params);
-    light.position.set(0, 10, 0);
-
-    this.lights[name] = light;
+  createNew(name, target, scene) {
+    // if target 0,1,0 -> meaning aiming the sky
+    this.lights[name] = new HemisphericLight(name, target, scene);
   }
 };
