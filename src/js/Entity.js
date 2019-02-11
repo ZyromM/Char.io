@@ -1,8 +1,6 @@
-import { Group } from 'three'
+import { Group } from "three";
 
 export const Entity = {
-
-    // Properties
-    list: {},
-
+  // Properties
+  list: {}
 };

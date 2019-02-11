@@ -1,39 +1,38 @@
-import { PerspectiveCamera } from "three";
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from './const.js'
+import { ArcRotateCamera, Vector3 } from "babylonjs";
 
 export const CameraManager = {
+  cameras: null,
 
-    fov: 85,
-    aspect: WINDOW_WIDTH / WINDOW_HEIGHT,
-    near: 0.1,
-    far: 1000,
+  createNew(name, alpha, beta, radius, target, scene, canvas) {
+    //add active as parameter
+    this.cameras = new ArcRotateCamera(
+      name,
+      alpha,
+      beta,
+      radius,
+      target,
+      scene
+    );
 
-    cameras: null,
+    this.camera.setTarget(Vector3.Zero());
 
-    createNew ( fov, aspect, near, far ) {
+    // attach the camera to the canvas
+    this.camera.attachControl(canvas, false);
 
-        if (fov) this.fov = fov;
-        if (aspect) this.aspect = aspect;
-        if (near) this.near = near;
-        if (far) this.far = far;
 
-        this.cameras = new PerspectiveCamera( this.fov, this.aspect, this.near, this.far );
+    //this.cameras.position.set(4, 4, 10);
+    //this.cameras.rotation.x = 100;
+  }
 
-        this.cameras.position.set(4, 4, 10);
-        this.cameras.rotation.x = 100;
-
-    },
-
-    setPosition ( x, y, z ) {
-
-        this.cameras.position.set( x, y, z )
-
-    },
-
-    setRotation ( x, y, z ) {
-
-        this.cameras.rotation.set( x, y, z )
-
-    },
-
+  // setPosition ( x, y, z ) {
+  //
+  //     this.cameras.position.set( x, y, z )
+  //
+  // },
+  //
+  // setRotation ( x, y, z ) {
+  //
+  //     this.cameras.rotation.set( x, y, z )
+  //
+  // },
 };

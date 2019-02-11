@@ -1,13 +1,9 @@
-import { TextureLoader } from 'three'
+import { Texture } from "babylonjs";
 
 export const TextureManager = {
+  textures: {},
 
-    textures: {},
-
-    createNew( name, path ) {
-
-        this.textures[name]  = new TextureLoader().load( path )
-
-    },
-
+  createNew(name, path) {
+    this.textures[name] = new Texture(path);
+  }
 };

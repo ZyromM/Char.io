@@ -1,16 +1,12 @@
-import { AmbientLight } from 'three'
+import { AmbientLight } from "three";
 
 export const LightManager = {
+  lights: {},
 
-    lights: {},
+  createNew(name, ...params) {
+    let light = new AmbientLight(params);
+    light.position.set(0, 10, 0);
 
-    createNew( name, ...params) {
-
-        let light = new AmbientLight( params );
-        light.position.set( 0, 10, 0 );
-
-        this.lights[name] = light;
-
-    }
-
+    this.lights[name] = light;
+  }
 };
