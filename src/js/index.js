@@ -95,7 +95,6 @@ import * as BABYLON from "babylonjs";
 // console.log("bite")
 //
 
-
 // window.addEventListener('DOMContentLoaded', function() {
 //     // get the canvas DOM element
 //     var canvas = document.getElementById('renderCanvas');

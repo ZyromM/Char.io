@@ -19,7 +19,6 @@ export const CameraManager = {
     // attach the camera to the canvas
     this.camera.attachControl(canvas, false);
 
-
     //this.cameras.position.set(4, 4, 10);
     //this.cameras.rotation.x = 100;
   }
