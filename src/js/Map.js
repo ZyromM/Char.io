@@ -10,12 +10,16 @@ export const Map = {
       for (let x = 0; pos[z][x]; ++x) {
         for (let y = 0; y <= pos[z][x]; ++y) {
           y === 0
-            ? map.push(Cube.create('', x, y, -z, 1, materialFloor, 'procedural', scene))
-            : map.push(Cube.create('', x, y, -z, 1, materialWall, 'procedural', scene))
+            ? map.push(
+                Cube.create("", x, y, -z, 1, materialFloor, "procedural", scene)
+              )
+            : map.push(
+                Cube.create("", x, y, -z, 1, materialWall, "procedural", scene)
+              );
         }
       }
     }
 
-    this.maps[name] = map
+    this.maps[name] = map;
   }
 };

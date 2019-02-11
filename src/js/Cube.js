@@ -8,7 +8,7 @@ export const Cube = {
       case "procedural":
         this.mesh = MeshBuilder.CreateBox(name, size, scene);
         this.mesh.material = material;
-        this.mesh.position.set(x, y, z)
+        this.mesh.position.set(x, y, z);
         break;
     }
 

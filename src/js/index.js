@@ -6,7 +6,7 @@ import { MaterialManager } from "./MaterialManager";
 import { EngineManager } from "./EngineManager";
 import { LightManager } from "./LightManager";
 import { exampleMap } from "./const";
-import { Map } from './Map';
+import { Map } from "./Map";
 
 window.addEventListener("DOMContentLoaded", function() {
   let createMainScene = () => {
@@ -77,9 +77,15 @@ window.addEventListener("DOMContentLoaded", function() {
     // End Testing
 
     // MAP
-    Map.createNew('MxMain', exampleMap.map, SceneManager.scenes['SxMain'], MaterialManager.materials['MxFloor1'], MaterialManager.materials['MxWall1'])
+    Map.createNew(
+      "MxMain",
+      exampleMap.map,
+      SceneManager.scenes["SxMain"],
+      MaterialManager.materials["MxFloor1"],
+      MaterialManager.materials["MxWall1"]
+    );
 
-    console.log('map : ', Map.maps['MxMain'])
+    console.log("map : ", Map.maps["MxMain"]);
 
     // GAME
     GameManager.add("materials", MaterialManager);
@@ -87,7 +93,6 @@ window.addEventListener("DOMContentLoaded", function() {
     GameManager.add("lights", LightManager);
     GameManager.add("scenes", SceneManager);
     GameManager.add("engines", EngineManager);
-
   };
 
   createMainScene();
