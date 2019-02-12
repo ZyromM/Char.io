@@ -4,9 +4,14 @@ This is Third Person Shooter game.
 
 ## Tooling
 
-*Webpack 4.x
-*BabylonJS 3.x
-*Babel 7.x
+* [Webpack 4.x](https://webpack.js.org/)
+* [BabylonJS 3.x](https://www.babylonjs.com/)
+* [BabelJS 7.x](https://babeljs.io/)
+
+## Coding Style
+
+* [Flow 0.92](https://flow.org/en/)
+* [Prettier 1.x](https://prettier.io/)
 
 ## How to launch it:
 
