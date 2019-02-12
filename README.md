@@ -17,9 +17,11 @@ This is Third Person Shooter game not finished yet. (In Progress)
 
 Check out this repository.
 
-`git clone https://github.com/ZyromM/Char.io.git`
-`yarn/npm install`
-`yarn/npm start`
+```
+git clone https://github.com/ZyromM/Char.io.git
+yarn/npm install
+yarn/npm start
+```
 
 It will be listening on `localhost:9000`
 
