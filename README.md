@@ -4,7 +4,9 @@ This is Third Person Shooter game.
 
 ## Tooling
 
-BabylonJS
+*Webpack 4.x
+*BabylonJS 3.x
+*Babel 7.x
 
 ## How to launch it:
 
