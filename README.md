@@ -19,13 +19,10 @@ Check out this repository.
 
 ```
 git clone https://github.com/ZyromM/Char.io.git
-
 yarn install
-
 yarn start
 ```
-
-It will be listening on `localhost:9000`
+It will spawn the `webpack-dev-server`, listening on [localhost:9000](localhost:9000)
 
 ## Client Side
 In Progress
