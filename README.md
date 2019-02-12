@@ -19,8 +19,10 @@ Check out this repository.
 
 ```
 git clone https://github.com/ZyromM/Char.io.git
-yarn/npm install
-yarn/npm start
+
+yarn install
+
+yarn start
 ```
 
 It will be listening on `localhost:9000`
