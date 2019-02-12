@@ -10,29 +10,28 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier && git status"
+      "pre-commit": "yarn flow && yarn prettier && git diff --exit-code"
     }
   },
   "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "babel-loader": "^8.0.5",
     "babylonjs": "^3.3.0",
-    "three": "^0.100.0",
-    "three-orbit-controls": "^82.1.0",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "cannon": "^0.6.2",
     "clean-webpack-plugin": "^1.0.1",
     "earcut": "^2.1.5",
     "flow-bin": "^0.92.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.3.1",
+    "jest": "^24.1.0",
     "oimo": "^1.0.9",
     "prettier": "1.16.4",
     "webpack-dev-server": "^3.1.14",

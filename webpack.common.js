@@ -3,7 +3,7 @@
 
    module.exports = {
      entry: {
-       app: './src/js/index.js'
+       app: './src/app/index.js'
      },
      output: {
        path: path.resolve(__dirname, "dist"),
@@ -25,7 +25,7 @@
            use: {
              loader: "babel-loader",
              options: {
-               presets: ["@babel/preset-env"]
+               presets: ["@babel/preset-env", "@babel/preset-flow"]
              }
            }
          }
