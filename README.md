@@ -1,6 +1,6 @@
 # Char.io
 
-This is Third Person Shooter game.
+This is Third Person Shooter game not finished yet. (In Progress)
 
 ## Tooling
 
